@@ -24,16 +24,20 @@ SRC_NAME = $(SRC_PATH)ft_fractol.c\
 LIBFT_PATH = libft/
 LIBFT_LIB = libft/libft.a
 
+MINI_PATH = minilibx_siera/
+MINI_LIB = minilibx_siera/libmlx.a
 
 CC = gcc
-FLAG = -Wall -Wextra -Werror -lm -lmlx -framework OpenGL -framework AppKit
+FLAG = -Wall -Wextra -Werror  -framework OpenGL -framework AppKit
 
 all: $(NAME)
 $(NAME):
 		cd $(LIBFT_PATH) && make re
-		$(CC) $(FLAG) $(SRC_NAME) $(LIBFT_LIB) -o $(NAME)
+		cd $(MINI_PATH) && make re
+		$(CC) $(FLAG) $(SRC_NAME) $(LIBFT_LIB) $(MINI_LIB) -o $(NAME)
 clean:
 	cd $(LIBFT_PATH) && make clean
+	cd $(MINI_PATH) && make clean
 
 fclean:
 	cd $(LIBFT_PATH) && make fclean

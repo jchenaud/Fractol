@@ -16,7 +16,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "../libft/libft.h"
-# include <mlx.h>
+//# include <mlx.h>
+# include "../minilibx_siera/mlx.h"
 
 # define PTR_MOTION_MASK (1L<<6)
 # define MOTION_NOTIFY 6
